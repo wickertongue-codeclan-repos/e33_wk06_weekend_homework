@@ -10,9 +10,44 @@
 <body>
 
   <form id="first-form">
+    <div id="form-wrapper">
+      <div class="form-item">
+        <label for="writing-submitted" class="primary">Writing Submitted:</label>      
+        <input type="text" id="writing-submitted" required/>
+     </div>
 
+    <div class="form-item">
+      <label for="type-of-writing" class="primary">Type of Writing:</label>
+      <select id="type-of-writing">
+        <option value="" disabled selected></option>
+        <option value="Book">Book</option>
+        <option value="Short Story">Short Story</option>
+        <option value="Article">Article</option>
+        <option value="Poem">Poem</option>
+        <option value="Collection of Poems">Collection of Poems</option>
+        <option value="Collection of Short Stories">Collection of Short Stories</option>
+        <option value="Script">Script</option>
+        <option value="Play">Play</option>
+      </select>
+    </div>
 
+    <div class="form-item">
+      <label for="place-submitted-to" class="primary">Submitted To:</label>
+      <input type="text" id="place-submitted-to" required/>
+    </div>
 
+    <div class="form-item">
+      <label for="type-of-place" class="primary">Type of Publisher/Magazine:</label>
+      <select id="type-of-place">
+        <option value="" disabled selected></option>
+        <option value="Magazine">Magazine</option>
+        <option value="Publisher">Publisher</option>
+        <option value="Agent">Agent</option>
+        <option value="Competition">Competition</option>
+      </select>
+    </div>
+  </div>
+  <input type="submit" value="save"/>
   </form>
   
 </body>
