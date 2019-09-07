@@ -21,7 +21,7 @@ const createSubmissionItem = function (form) {
   const newItem = document.createElement('div');
   newItem.classList.add('records-item');
 
-  const writingSubmitted = document.createElement('p');
+  const writingSubmitted = document.createElement('h3');
   writingSubmitted.textContent = `Title: ${form['writing-submitted'].value}`;
   newItem.appendChild(writingSubmitted);
 

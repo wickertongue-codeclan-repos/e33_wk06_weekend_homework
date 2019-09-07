@@ -1,0 +1,16 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#records {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.records-item {
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 15%;
+  background: ivory;
+}
