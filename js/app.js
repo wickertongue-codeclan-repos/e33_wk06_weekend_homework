@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('#first-form');
   form.addEventListener('submit', handleNewItemFormSubmit);
+
+  const deleteAll = document.querySelector('#delete-all');
+  deleteAll.addEventListener('click', handleDeleteAllClick);
 })
 
 const handleNewItemFormSubmit = function (event) {
@@ -35,4 +38,9 @@ const createSubmissionItem = function (form) {
   newItem.appendChild(typeOfPlace);
 
   return newItem;
+}
+
+const handleDeleteAllClick = function (event) {
+  const newItem = document.querySelector('#records');
+  newItem.innerHTML = '';
 }
