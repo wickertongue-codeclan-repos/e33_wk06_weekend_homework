@@ -2,23 +2,48 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript loaded');
 
   const form = document.querySelector('#first-form');
-  form.addEventListener('submit', handleFormSubmit);
-
+  form.addEventListener('submit', handleWritingSubmit);
+  form.addEventListener('submit', handleTypeWritingSubmit);
+  form.addEventListener('submit', handlePlaceSubmittedToSubmit);
+  form.addEventListener('submit', handleTypeOfPlaceSubmit);
 })
 
-const handleFormSubmit = function (event) {
+const handleWritingSubmit = function (event) {
   event.preventDefault();
 
-  console.log(event.target['writing-submitted'].value);
-  console.log(event.target['type-of-writing'].value);
-  console.log(event.target['place-submitted-to'].value);
-  console.log(event.target['type-of-place'].value);
+  const existingParent = document.querySelector('#records');
+  const newTableData = document.createElement('td');
+  existingParent.appendChild(newTableData);
 
-  const parent = document.querySelector('#records');
-  const newTableItem = document.createElement('table');
-  parent.appendChild(newTableItem);
+  newTableData.textContent = `${event.target['writing-submitted'].value}`
+};
 
-  newTableItem.textContent = `Writing Submitted: ${event.target['writing-submitted'].value}, Type of Writing: ${event.target['type-of-writing'].value}, Submitted To: ${event.target['place-submitted-to'].value}, Type of Place: ${event.target['type-of-place'].value}.`
-}
+const handleTypeWritingSubmit = function (event) {
+  event.preventDefault();
 
+  const existingParent = document.querySelector('#records');
+  const newTableData = document.createElement('td');
+  existingParent.appendChild(newTableData);
 
+  newTableData.textContent = `${event.target['type-of-writing'].value}`
+};
+
+const handlePlaceSubmittedToSubmit = function (event) {
+  event.preventDefault();
+
+  const existingParent = document.querySelector('#records');
+  const newTableData = document.createElement('td');
+  existingParent.appendChild(newTableData);
+
+  newTableData.textContent = `${event.target['place-submitted-to'].value}`
+};
+
+const handleTypeOfPlaceSubmit = function (event) {
+  event.preventDefault();
+
+  const existingParent = document.querySelector('#records');
+  const newTableData = document.createElement('td');
+  existingParent.appendChild(newTableData);
+
+  newTableData.textContent = `${event.target['type-of-place'].value}`
+};
