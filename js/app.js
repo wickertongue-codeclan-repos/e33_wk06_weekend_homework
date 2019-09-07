@@ -7,32 +7,69 @@ document.addEventListener('DOMContentLoaded', () => {
 const handleNewItemFormSubmit = function (event) {
   event.preventDefault();
 
-  const submissionItem = createSubmissionItem(event.target);
+  const submissionItem = createSubmissionItem(event);
   const records = document.querySelector('#records');
   records.appendChild(submissionItem);
 
   event.target.reset();
 }
 
-const createSubmissionItem = function (form) {
-  const newItem = document.createElement('li');
-  newItem.classList.add('records-item');
+const createTableRow = function () {
+  const newTableRow = document.createElement('tr');
+  newTableRow.classList.add('records-item-headers');
+  return newTableRow;
+}
 
-  const writingSubmitted = document.createElement('p');
-  writingSubmitted.textContent = `Title of Work Submitted: ${form['writing-submitted'].value}`;
-  newItem.appendChild(writingSubmitted);
+const createTableRowForData = function () {
+  const newTableRowForData = document.createElement('tr');
+  newTableRowForData.classList.add('records-item-headers');
+  return newTableRowForData;
+}
 
-  const typeOfWriting = document.createElement('p');
-  typeOfWriting.textContent = `Type of Writing Submitted: ${form['type-of-writing'].value}`;
-  newItem.appendChild(typeOfWriting);
+const createTableHeader = function (text) {
+  const newTableRow = createTableRow()
+  const newTableHeader = document.createElement('th');
+  newTableHeader.textContent = text;
+  newTableRow.appendChild(newTableHeader);
+  return newTableHeader;
+}
 
-  const placeSubmittedTo = document.createElement('p');
-  placeSubmittedTo.textContent = `Place Submitted to: ${form['place-submitted-to'].value}`;
-  newItem.appendChild(placeSubmittedTo);
+const createTableData = function (text) {
+  const newTableRowForData = createTableRowForData()
+  const newTableData = document.createElement('td');
+  newTableData.textContent = text;
+  newTableRowForData.appendChild(newTableData);
+  return newTableData;
+}
 
-  const typeOfPlace = document.createElement('p');
-  typeOfPlace.textContent = `Type of Place Submitted to: ${form['type-of-place'].value}`;
-  newItem.appendChild(typeOfPlace);
+const createSubmissionItem = function (event) { 
+  createTableRow();
+  createTableHeader('Title of Work Submitted');
+  createTableHeader('Type of Writing Submitted');
+  createTableHeader('Submitted To');
+  createTableHeader('Type of Place');
+  createTableRowForData();
+  createTableData(event.target['writing-submitted'].value)
+  createTableData(event.target['type-of-writing'].value)
+  createTableData(event.target['place-submitted-to'].value)
+  createTableData(event.target['type-of-place'].value)
+  return this;
 
-  return newItem;
+  // const writingSubmitted = document.createElement('td');
+  // writingSubmitted.textContent = `Title of Work Submitted: ${form['writing-submitted'].value}`;
+  // newItem.appendChild(writingSubmitted);
+
+  // const typeOfWriting = document.createElement('p');
+  // typeOfWriting.textContent = `Type of Writing Submitted: ${form['type-of-writing'].value}`;
+  // newItem.appendChild(typeOfWriting);
+
+  // const placeSubmittedTo = document.createElement('p');
+  // placeSubmittedTo.textContent = `Submitted to: ${form['place-submitted-to'].value}`;
+  // newItem.appendChild(placeSubmittedTo);
+
+  // const typeOfPlace = document.createElement('p');
+  // typeOfPlace.textContent = `Type of Place Submitted to: ${form['type-of-place'].value}`;
+  // newItem.appendChild(typeOfPlace);
+
+  // return newItem;
 }
