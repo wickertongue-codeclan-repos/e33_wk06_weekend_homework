@@ -54,22 +54,4 @@ const createSubmissionItem = function (event) {
   createTableData(event.target['place-submitted-to'].value)
   createTableData(event.target['type-of-place'].value)
   return this;
-
-  // const writingSubmitted = document.createElement('td');
-  // writingSubmitted.textContent = `Title of Work Submitted: ${form['writing-submitted'].value}`;
-  // newItem.appendChild(writingSubmitted);
-
-  // const typeOfWriting = document.createElement('p');
-  // typeOfWriting.textContent = `Type of Writing Submitted: ${form['type-of-writing'].value}`;
-  // newItem.appendChild(typeOfWriting);
-
-  // const placeSubmittedTo = document.createElement('p');
-  // placeSubmittedTo.textContent = `Submitted to: ${form['place-submitted-to'].value}`;
-  // newItem.appendChild(placeSubmittedTo);
-
-  // const typeOfPlace = document.createElement('p');
-  // typeOfPlace.textContent = `Type of Place Submitted to: ${form['type-of-place'].value}`;
-  // newItem.appendChild(typeOfPlace);
-
-  // return newItem;
 }
